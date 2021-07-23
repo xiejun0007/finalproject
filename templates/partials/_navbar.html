@@ -11,22 +11,21 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <ul class="navbar-nav">
-                <li {% if '/' == request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3" 
-                {% endif%}>
-                    <a class="nav-link" href="{% url 'index' %}">Home</a>
-                </li>
-                <li {% if 'about' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3" 
-                {% endif %}>
-                    <a class="nav-link" href="{% url 'about' %}">About</a>
-                </li>
-                <li {% if 'people' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3" 
-                {% endif %}>
-                    <a class="nav-link" href="{% url 'index' %}">People</a>
-                </li>
-                <li {% if 'pets' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3" 
-                {%endif %}>
-                    <a class="nav-link" href="{% url 'index' %}">Pets</a>
-                </li>
+                {% if '/' == request.path %} 
+                <li style="color: rgb(130,100,120) ">Help and safe your love</li>
+                {% else %}
+                    <li {% if '/' == request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3" 
+                    {% endif%}>
+                        <a class="nav-link" href="{% url 'index' %}">Home</a>
+                    <li {% if '/' == request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3" 
+                    {% endif%}>
+                        <a class="nav-link" href="{% url 'peoples' %}">latest update</a>
+                    </li>
+                    <li {% if 'about' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3" 
+                    {% endif %}>
+                        <a class="nav-link" href="{% url 'about' %}">About</a>
+                    </li>
+                {% endif %}
             </ul>
 
             <ul class="navbar-nav ml-auto">

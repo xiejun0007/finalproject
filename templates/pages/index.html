@@ -1,7 +1,41 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block content %}
 
-<h1>Home</h1>
+<!-- Choices -->
+<section id="team" class="py-5">
+    <div class="container">
+      <h2 class="text-center">Looking For ... </h2>
+      <div class="row text-center">
+        <div class="col-md-4">
+            <a href="peopleshome">
+                <img src="{% static 'img/pets.png' %}" alt="" class="rounded-circle mb-3">
+            </a>
+            <hr>
+            <a href="peopleshome">
+                <h4>Pets</h4>
+            </a>
+          </div>
+
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-2">
+        </div>
+
+        <div class="col-md-4">
+            <a href="peopleshome">
+                <img src="{% static 'img/people.png' %}" alt="" class="rounded-circle mb-3">
+            </a>
+            <hr>
+            <a href="peopleshome">
+                <h4>People</h4>
+            </a>
+            
+        </div>
+      </div>
+    </div>
+  </section>  
 
 {% endblock %}
