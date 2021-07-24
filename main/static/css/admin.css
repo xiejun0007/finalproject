@@ -1,6 +1,11 @@
+#ImageSize{
+  max-width: 40%;
+  height: 25px;
+}
+
 #header {
   height: 75px;
-  background: #10284e;
+  background: #185e5a;
   color: #fff;
 }
 
@@ -8,26 +13,20 @@
   color: #fff;
 }
 
-div.breadcrumbs {
-  background: #30caa0;
-  color: #10284e;
+#img
+
+img[class*="align"], img[class*="wp-image-"], img[class*="attachment-"] {
+  height: auto;
 }
 
-div.breadcrumbs a {
-  color: #333;
+img.alignright, .wp-caption.alignright {
+  margin: 0.857142857rem 0 0.857142857rem 1.714285714rem;
 }
 
-.module h2,
-.module caption,
-.inline-group h2 {
-  background: #30caa0;
+.aligncenter{
+  display: block;
 }
 
-.button,
-input[type="submit"],
-input[type="button"],
-.submit-row input,
-a.button {
-  background: #10284e;
-  color: #fff;
+.alignright, .float-right{
+  float: right! important;
 }

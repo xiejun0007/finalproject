@@ -3,5 +3,5 @@ from django.shortcuts import render
 def index(request):
     return render(request, 'pages/index.html')
 
-def peoples(request):
-    return render(request, 'peoples/peoples.html')
+def pets(request):
+    return render(request, 'pets/pets.html')

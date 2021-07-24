@@ -20,18 +20,18 @@ img {
 }
 
 #showcase {
-  background: url(../img/showcase.jpg) no-repeat top center fixed;
+  background: url(../img/hug.jpg) no-repeat top center fixed;
   position: relative;
-  min-height: 650px;
+  min-height: 300px;
   color: #fff;
   padding-top: 6rem;
 }
-#showcase .home-search {
+/* #showcase .home-search {
   min-height: 400px;
   position: relative;
   border-radius: 5px;
-}
-#showcase .overlay {
+} */
+/* #showcase .overlay { 
   content: "";
   position: absolute;
   top: 0;
@@ -39,7 +39,7 @@ img {
   min-height: 400px;
   width: 100%;
   background: rgba(51, 51, 51, 0.8);
-}
+} */
 
 #services {
   background: url(../img/building.jpg) no-repeat top center fixed;
@@ -76,6 +76,19 @@ img {
   min-height: 270px;
 }
 
+#showcase-title{
+  color: #0c3c97;
+  font-family: "Montserrat",sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 2.875rem;
+  line-height: 3.625rem;
+  margin: 0;
+  margin-bottom: 2.875rem;
+  width: auto;
+  text-transform: uppercase;
+}
+
 #work {
   padding: 6rem 0;
 }
@@ -91,6 +104,7 @@ img {
   #showcase h1 {
     font-size: 40px;
   }
+ 
   .hide-md-down {
     display: none;
   }
@@ -116,9 +130,9 @@ img {
 
 @media (max-width: 576px) {
   #showcase h1 {
-    font-size: 30px;
+    font-size: 20px;
   }
   #showcase-inner h1 {
-    font-size: 40px;
+    font-size: 30px;
   }
 }
