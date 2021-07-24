@@ -35,6 +35,8 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'peoples.apps.PeoplesConfig',
     'pets.apps.PetsConfig',
+    'news.apps.NewsConfig',
+    'account.apps.AccountConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

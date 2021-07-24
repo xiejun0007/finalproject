@@ -5,3 +5,6 @@ def index(request):
 
 def peoples(request):
     return render(request, 'peoples/peoples.html')
+
+def aboutpeoples(request):
+    return render(request, 'pages/aboutpeoples.html')
