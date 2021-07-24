@@ -12,21 +12,3 @@
 #branding {
   color: #fff;
 }
-
-#img
-
-img[class*="align"], img[class*="wp-image-"], img[class*="attachment-"] {
-  height: auto;
-}
-
-img.alignright, .wp-caption.alignright {
-  margin: 0.857142857rem 0 0.857142857rem 1.714285714rem;
-}
-
-.aligncenter{
-  display: block;
-}
-
-.alignright, .float-right{
-  float: right! important;
-}
