@@ -55,7 +55,6 @@ img {
 
 
 #showcase-title{
-  color: #0c3c97;
   font-family: "Montserrat",sans-serif;
   font-weight: 600;
   font-style: normal;
@@ -64,7 +63,6 @@ img {
   margin: 0;
   margin-bottom: 2.875rem;
   width: auto;
-  text-transform: uppercase;
 }
 
 /* pets homepages */
