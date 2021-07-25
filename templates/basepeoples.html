@@ -19,17 +19,7 @@
 </head>
 
 <body>
-    {% if '/' == request.path %}
-    <!-- Navbar -->
-    {% include 'partials/_navbar.html' %}
-
-    {% block content %}
-    {% endblock %}
-
-    <!-- Footer -->
-    {% include 'partials/_footer.html' %}
-
-    {% else %}
+    
         <!-- Top Bar -->
     {% include 'partials/_topbar.html' %}
 
@@ -49,7 +39,7 @@
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'js/lightbox.min.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
-    {% endif %}
+    
 </body>
 
 </html>

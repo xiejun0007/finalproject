@@ -1,10 +1,13 @@
-from django.shortcuts import render
+from django.core import paginator
+from django.shortcuts import get_object_or_404, render
+from django.core.paginator import Paginator
 
 def index(request):
-    return render(request, 'pages/index.html')
+    return 
+    # render(request, 'news/news.html')
 
-def pets(request):
-    return render(request, 'pets/pets.html')
+def news(request):
+    return render(request, 'news/news.html')
 
 def search(request):
     return render(request, 'pets/search.html')

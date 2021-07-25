@@ -19,10 +19,34 @@ img {
   margin-right: 0.4rem;
 }
 
-/* index page */
+/* all picture showcase */
 
 #showcase1 {
   background: url(../img/hug.jpg) no-repeat top center fixed;
+  position: relative;
+  min-height: 300px;
+  color: #fff;
+  padding-top: 6rem;
+}
+
+#showcase2 {
+  background: url(../img/dog1.png) no-repeat top center fixed;
+  position: relative;
+  min-height: 300px;
+  color: #fff;
+  padding-top: 6rem;
+}
+
+#showcase3 {
+  background: url(../img/dog2.jpg) no-repeat top center fixed;
+  position: relative;
+  min-height: 300px;
+  color: #fff;
+  padding-top: 6rem;
+}
+
+#showcase4 {
+  background: url(../img/dog3.jpg) no-repeat top center fixed;
   position: relative;
   min-height: 300px;
   color: #fff;
@@ -112,16 +136,10 @@ img {
 }
 
 @media (max-width: 991px) {
-  #showcase1 {
+  #showcase, #showcase1,#showcase2,#showcase3,#showcase4{
     padding-top: 4rem;
   }
-  #showcase{
-    padding-top: 4rem;
-  }
-  #showcase1 h1 {
-    font-size: 40px;
-  }
-  #showcase h1 {
+  #showcase h1,#show1case h1,#showcase2 h1,#showcase3 h1, #showcase4 h1 {
     font-size: 40px;
   }
   .hide-md-down {
@@ -130,22 +148,13 @@ img {
 }
 
 @media (max-width: 768px) {
-  #showcase {
+  #showcase,#showcase1,#showcase2,#showcase3,#showcase4 {
     padding-top: 3rem;
   }
-  #showcase h1 {
+  #showcase h1,#showcase1 h1,#showcase2 h1,#showcase3 h1,#showcase4 h1 {
     font-size: 40px;
   }
-  #showcase p {
-    display: none;
-  }
-  #showcase1 {
-    padding-top: 3rem;
-  }
-  #showcase1 h1 {
-    font-size: 40px;
-  }
-  #showcase1 p {
+  #showcase p,#showcase1 p,#showcase2 p,#showcase3 p,#showcase4 p {
     display: none;
   }
   #top-bar {
@@ -157,10 +166,7 @@ img {
 }
 
 @media (max-width: 576px) {
-  #showcase h1 {
-    font-size: 20px;
-  }
-  #showcase1 h1 {
+  #showcase h1,#showcase1 h1,#showcase2 h1,#showcase3 h1,#showcase4 h1 {
     font-size: 20px;
   }
   #showcase-inner h1 {

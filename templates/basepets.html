@@ -19,37 +19,27 @@
 </head>
 
 <body>
-    {% if '/' == request.path %}
-    <!-- Navbar -->
-    {% include 'partials/_navbar.html' %}
-
-    {% block content %}
-    {% endblock %}
-
-    <!-- Footer -->
-    {% include 'partials/_footer.html' %}
-
-    {% else %}
-        <!-- Top Bar -->
-    {% include 'partials/_topbar.html' %}
-
-    <!-- Navbar -->
-    {% include 'partials/_navbarpets.html' %} 
-
-    {% block content1 %}
-    {% endblock %}
-
-    <!-- Footer -->
-    {% include 'partials/_footer.html' %}>
     
-             
+    <!-- Top Bar -->
+        {% include 'partials/_topbar.html' %}
+
+        <!-- Navbar -->
+        {% include 'partials/_navbarpets.html' %} 
+
+        {% block content1 %}
+        {% endblock %}
+
+        <!-- Footer -->
+        {% include 'partials/_footer.html' %}>
+        
+                
 
 
-    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
-    <script src="{% static 'js/lightbox.min.js' %}"></script>
-    <script src="{% static 'js/main.js' %}"></script>
-    {% endif %}
+        <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'js/lightbox.min.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+        
 </body>
 
 </html>
