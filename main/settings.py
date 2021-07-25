@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'pets.apps.PetsConfig',
     'news.apps.NewsConfig',
     'account.apps.AccountConfig',
-    'contacts.apps.ContactsConfig',
+    'findpeople.apps.FindpeopleConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

@@ -1,43 +1,42 @@
-{% extends 'basepeoples.html' %} 
+{% extends 'basepets.html' %} 
 
 {% block content1 %}
 
 <!-- person -->
-<section id="peoples" class="py-4">
-  <div class="container">
-    <a href="{% url 'peoples' %}" class="btn btn-light mb-4">Back To peoples</a>
+<section id="pet" class="py-4">
+    <div class="container">
+        <a href="{% url 'search' %}" class="btn btn-light mb-4">Back To pets</a>
     <div class="row">
-      <div class="col-md-9">
+    <div class="col-md-9">
         <!-- Home Main Image -->
-        <img src="{{person.image.url }} "alt="" class="img-main img-fluid mb-3">
-        
+        <img src="{{ pet.photo_main.url}} "alt="" class="img-main img-fluid mb-3">
         <!-- Fields -->
         <div class="row mb-5 fields">
-          <div class="col-md-6">
+            <div class="col-md-6">
             <ul class="list-group list-group-flush">
-              <li class="list-group-item text-secondary">
+                <li class="list-group-item text-secondary">
                 <i class="fas fa-user-circle"></i> Name:
-                <span class="float-right">{{ person.name }}</span>
-              </li>
-              <li class="list-group-item text-secondary">
-                <i class="fas fa-male"></i> cm:
-                <span class="float-right">{{ person.height }}</span>
-              </li>
-              <li class="list-group-item text-secondary">
+                <span class="float-right">{{ pet.name }}</span>
+                </li>
+                <li class="list-group-item text-secondary">
+                <i class="fas fa-male"></i> gender:
+                <span class="float-right">{{ pet.gender }}</span>
+                </li>
+                <li class="list-group-item text-secondary">
                 <i class="fas fa-weight"></i> kg:
-                <span class="float-right">{{ person.weight }}</span>
-              </li>
-              <li class="list-group-item text-secondary">
+                <span class="float-right">{{ pet.weight }}</span>
+                </li>
+                <li class="list-group-item text-secondary">
                 <i class="fas fa-globe"></i> LOCATION:
-                <span class="float-right">{{ person.state }} </span>
-              </li>
+                <span class="float-right">{{ pet.province }} </span>
+                 </li>
             </ul>
-          </div>
+            </div>
             <div class="col-md-6">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item text-secondary">
-                    <i class="fas fa-id-card"></i> age:
-                    <span class="float-right">{{ person.age }} </span>
+                    <i class="fas fa-id-card"></i> categories:
+                    <span class="float-right">{{ pets.category }} </span>
                     </li>
                 </ul>
             </div>
@@ -46,20 +45,21 @@
         <!-- Description -->
         <div class="row mb-5">
           <div class="col-md-12">
-           {{ person.description }}
-          </div>
+           {{ pet.description }}
         </div>
-      </div>
-      <div class="col-md-3">
+    </div>
+    </div>
+    </div>
+
+    <div class="col-md-3">
         <div class="card mb-3">
-          <img class="card-img-top" src="index" alt="">
+            <img class="card-img-top" src="index" alt="">
         </div>
         <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal">
           Make An Inquiry
         </button>
-      </div>
     </div>
-  </div>
+    </div>
 </section>
 
 <!-- Inquiry Modal -->

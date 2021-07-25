@@ -1,21 +1,42 @@
-{% extends 'basepets.html' %} {% load static %} {% block content1 %}
-Home
-News
-{{ news.title }}
-Back To Recent News
+{% extends 'basepets.html' %} 
 
-{% if listing.photo_1 %}
+{% block content1 %}
 
-{% endif %} {% if listing.photo_2 %}
+<!-- person -->
+<section id="peoples" class="py-4">
+  <div class="container">
+    <a href="{% url 'news' %}" class="btn btn-light mb-4">Back To news</a>
+    <div class="row">
+      <div class="col-md-9">
+        <!-- Home Main Image -->
+        <img src="{{ new.image.url }} "alt="" class="img-main img-fluid mb-3">
+        
+        <!-- Fields -->
+        <div class="row mb-5 fields">
+          <div class="col-md-6">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item text-secondary">
+                <i class=""></i> Text:
+                <span class="float-right">{{ new.title }}</span>
+              </li>
+              {% comment %} <li class="list-group-item text-secondary">
+                <i class=""></i> Description:
+                <span class="float-right">{{ new.description }}</span>
+              </li> {% endcomment %}
+              <li class="list-group-item text-secondary">
+                <i class="fas fa-clock"></i> Date:
+                <span class="float-right">{{ new.list_date }}</span>
+              </li>
+            </ul>
 
-{% endif %} {% if listing.photo_3 %}
+        <!--Description-->
+        <div class="row mb-5">
+            <div class="col-md-12">
+                {{ new.description }}
+            </div>
+        </div>
+            
+          </div>
+        </div>
 
-{% endif %} {% if listing.photo_4 %}
-
-{% endif %} {% if listing.photo_5 %}
-
-{% endif %} {% if listing.photo_6 %}
-
-{% endif %}
-The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.
-{% endblock %}
+  {% endblock %}
