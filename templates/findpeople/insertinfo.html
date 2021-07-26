@@ -1,0 +1,65 @@
+{% extends 'basepeoples.html' %}\
+
+{% block content1 %}
+    
+<!-- Breadcrumb -->
+<section id="bc" class="mt-3">
+  <div class="container">
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="{% url 'index' %}">Home</a>
+        </li>
+        <li class="breadcrumb-item active">
+          <a href="{% url 'findpeople' %}">Found</a>
+        </li>
+      </ol>
+    </nav>
+  </div>
+</section>
+
+<!--showcase-->
+<section id="reportpeople" class="bg-light py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <div class="card">
+            <div class="card-header bg-primary text-white">
+              <h4>
+                <i class="fas fa-user-plus"></i>  Reporting People</h4>
+            </div>
+            <div class="card-body">
+                <!-- Alert -->
+                {% include 'partials/_alerts.html' %}
+                <form action="{% url 'insertinfo' %}" method="POST">
+                    {% csrf_token %}
+                  <div class="form-group">
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" name="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="age">Age</label>
+                  <input type="text" name="age" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="state">State</label>
+                  <input type="text" name="state" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="image">Image</label>
+                  <input type="file" name="image" class="form-control" required>
+                </div>
+                <input type="submit" value="Report People" class="btn btn-sscondary btn-block">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+
+{% endblock %}

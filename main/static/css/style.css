@@ -53,6 +53,21 @@ img {
   padding-top: 6rem;
 }
 
+#showcaseperson {
+  background: url(../img/family.jpg) no-repeat top center fixed;
+  position: relative;
+  min-height: 300px;
+  color: #fff;
+  padding-top: 6rem;
+}
+
+#showcase5 {
+  background: url(../img/dog3.jpg) no-repeat top center fixed;
+  position: relative;
+  min-height: 300px;
+  color: #fff;
+  padding-top: 6rem;
+}
 
 #showcase-title{
   font-family: "Montserrat",sans-serif;
@@ -68,6 +83,14 @@ img {
 /* pets homepages */
 #showcase {
   background: url(../img/showcase.jpg) no-repeat top center fixed;
+  position: relative;
+  min-height: 650px;
+  color: #fff;
+  padding-top: 6rem;
+}
+
+#showcaseperson {
+  background: url(../img/family.jpg) no-repeat top center fixed;
   position: relative;
   min-height: 650px;
   color: #fff;
@@ -134,10 +157,10 @@ img {
 }
 
 @media (max-width: 991px) {
-  #showcase, #showcase1,#showcase2,#showcase3,#showcase4{
+  #showcase,#showcaseperson, #showcase1,#showcase2,#showcase3,#showcase4,#showcase5{
     padding-top: 4rem;
   }
-  #showcase h1,#show1case h1,#showcase2 h1,#showcase3 h1, #showcase4 h1 {
+  #showcase h1,#showcaseperson ,#show1case h1,#showcase2 h1,#showcase3 h1, #showcase4 h1,#showcase5 h1 {
     font-size: 40px;
   }
   .hide-md-down {
@@ -146,13 +169,13 @@ img {
 }
 
 @media (max-width: 768px) {
-  #showcase,#showcase1,#showcase2,#showcase3,#showcase4 {
+  #showcase,#showcaseperson,#showcase1,#showcase2,#showcase3,#showcase4,#showcase4 {
     padding-top: 3rem;
   }
-  #showcase h1,#showcase1 h1,#showcase2 h1,#showcase3 h1,#showcase4 h1 {
+  #showcase h1,#showcaseperson h1, #showcase1 h1,#showcase2 h1,#showcase3 h1,#showcase4 h1,#showcase5 h1 {
     font-size: 40px;
   }
-  #showcase p,#showcase1 p,#showcase2 p,#showcase3 p,#showcase4 p {
+  #showcase p,#showcaseperson p,#showcase1 p,#showcase2 p,#showcase3 p,#showcase4, #showcase5 p {
     display: none;
   }
   #top-bar {
@@ -164,7 +187,7 @@ img {
 }
 
 @media (max-width: 576px) {
-  #showcase h1,#showcase1 h1,#showcase2 h1,#showcase3 h1,#showcase4 h1 {
+  #showcase h1,#showcaseperson h1, #showcase1 h1,#showcase2 h1,#showcase3 h1,#showcase4 h1,#showcase5 h1 {
     font-size: 20px;
   }
   #showcase-inner h1 {

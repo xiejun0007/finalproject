@@ -1,69 +1,173 @@
 {% extends 'basepets.html' %}
 
 {% block content1 %}
-    <!-- Breadcrumb -->
+
+<!-- Breadcrumb -->
 <section id="bc" class="mt-3">
   <div class="container">
-    <nav>
+    <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="{% url 'index' %}">Home</a>
+          <a href="{% url 'index' %}"> <i class="fas fa-home"></i> Home</a>
         </li>
-        <li class="breadcrumb-item active">
-          <a href="{% url 'findpets' %}">Found</a>
+        <li class="breadcrumb-item">
+          <a href="{% url 'pets' %}">Browse PETS</a>
         </li>
+        <li class="breadcrumb-item active">Search Results</li>
       </ol>
     </nav>
   </div>
 </section>
 
-<!--showcase-->
-<section id="reportpeople" class="bg-light py-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 mx-auto">
-          <div class="card">
-            <div class="card-header bg-primary text-white">
-              <h4>
-                <i class="fas fa-user-plus"></i>  Reporting Pets</h4>
+<section id="showcase">
+  <div class="container text-center">
+    <div class="home-search p-5">
+      <div class="overlay p-5">
+        <h1 class="display-4 mb-4">SEARCH PETS</h1>
+        <p class="lead"></p>
+        <div class="search">
+          <form action="{% url 'findpets' %}">
+            <!-- Form Row 1 -->
+
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label class="sr-only">Name</label>
+                    <input class="form-control" name="keywords" placeholder="Name" value="{{ values.keywords }}" type="text">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label class="sr-only">Age</label>
+                    <input class="form-control" name="age" placeholder="Age" value="{{ values.age }}" type="text">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label class="sr-only">Weight </label>
+                    <input class="form-control" name="weight" placeholder="Weight" value="{{ values.weight }}" type="text">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label class="sr-only">States</label>
+                    <input class="form-control" name="location" placeholder="Province" value="{{ values.location }}" type="text">
+                </div>
+            </div>
+            <button class="btn btn-secondary btn-block mt-4" type="submit">
+              Submit form
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Peoples -->
+<section id="findpets" class="py-4">
+  <div class="container">
+    <div class="row">
+      {% if findpets %} 
+      {% for findpet in findpets %}
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card listing-preview">
+          <img class="card-img-top" src="{{ findpet.image.url }}" alt="" />
+            <div class="card-img-overlay">
             </div>
             <div class="card-body">
-                <!-- Alert -->
-                {% include 'partials/_alerts.html' %}
-                <form action="{% url 'findpet' %}" method="POST">
-                    {% csrf_token %}
-                  <div class="form-group">
-                <div class="form-group">
-                  <label for="name">Name</label>
-                  <input type="text" name="name" class="form-control" required>
-                </div>
-                <div class="form-group">
-                  <label for="weight">Weight</label>
-                  <input type="weight" name="weight" class="form-control" required>
-                </div>
-                <div class="form-group">
-                  <label for="gender">Gender</label>
-                  <input type="gender" name="gender" class="form-control" required>
-                </div>
-                <div class="form-group">
-                  <label for="location">Province</label>
-                  <input type="location" name="location" class="form-control" required>
-                </div>
-                <div class="form-group">
-                  <label for="categories">categories</label>
-                  <input type="categories" name="categories" class="form-control" required>
-                </div>
-                <div class="form-group">
-                  <label for="image">Image</label>
-                  <input type="file" name="image" class="form-control" required>
-                </div>
-                <input type="submit" value="Report Your Pet" class="btn btn-sscondary btn-block">
-              </form>
+            <div class="listing-heading text-center">
+              <h4 class="text-primary">{{ findpet.name }}</h4>
+            </div>
+            <hr />
+            <div class="row py-2 text-secondary">
+              <div class="col-6">
+                <i class="fas fa-id-card"></i> {{ findpet.age }}
+              </div>
+
+            </div>
+            <div class="row py-2 text-secondary">
+              <div class="col-12">
+                <i class="fas fa-globe"></i> {{ findpet.location }}
+              </div>
+            </div>
+            <div class="row py-2 text-secondary">
+              <div class="col-12">
+                <i class="fas fa-globe"></i> {{ findpet.weight }}
+              </div>
+            </div>
+            <div class="row py-2 text-secondary">
+              <div class="col-12">
+                <i class="fas fa-globe"></i> {{ findpet.gender }}
+              </div>
+            </div>
+            <div class="row py-2 text-secondary">
+              <div class="col-12">
+                <i class="fas fa-globe"></i> {{ findpet.categories }}
+              </div>
             </div>
           </div>
         </div>
       </div>
+      {% endfor %} 
+      {% else %}
+      <div class="col-md-12">
+        <p>No Pets Available</p>
+      </div>
+      {% endif %}
     </div>
-  </section>
 
+      <div class="col-md-3" style="text-align: center;">
+        <form action = "{% url 'findpet' %}">
+        <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal">
+            Report found
+        </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+     {% comment %} pagination {% endcomment %}
+    <div class="row">
+      <div class="col-md-12">
+        {% if findpets.has_other_pages %}
+        <ul class="pagination">
+          {% if findpets.has_previous %}
+          <li class="page-item">
+            <a href="?page={{findpets.previous_page_number}}" class="page-link"
+              >&laquo;</a
+            >
+          </li>
+          {% else %}
+          <li class="page-item disabled">
+            <a class="page-link">&laquo;</a>
+          </li>
+          {% endif %} 
+
+
+          {% for i in findpets.paginator.page_range %} 
+            {% if findpets.number == i %}
+            <li class="page-item active">
+              <a class="page-link">{{ i }}</a>
+            </li>
+            {% else %}
+            <li class="page-item">
+              <a href="?page={{i}}" class="page-link">{{ i }}</a>
+            </li>
+            {% endif %} 
+          {% endfor %}
+
+
+          {% if findpets.has_next %}
+          <li class="page-item">
+            <a href="?page={{findpets.next_page_number}}" class="page-link"
+              >&raquo;</a
+            >
+          </li>
+          {% else %}
+          <li class="page-item disabled">
+            <a class="page-link">&laquo;</a>
+          </li>
+          {% endif %}
+
+        </ul>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+</section>
 {% endblock  %}
