@@ -16,4 +16,4 @@ The final problem was that one of our main objective did not work because  we we
 
 ## The conclusion
 
-The course was every informative and we learned many things for starter we learned to use django and the git
+The course was every informative and we learned many things for starter we learned to use django and the git.
