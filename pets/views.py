@@ -129,3 +129,5 @@ def pet(request, pet_id):
     }
     return render(request,'pets/petsinfo.html', context)
 
+def findpets(request):
+    return render(request,'findpets/findpets.html')

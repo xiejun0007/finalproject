@@ -4,10 +4,12 @@ from datetime import date, datetime
 from django.db.models.fields import BLANK_CHOICE_DASH
 
 
-class Findpeople(models.Model):
+class Findpets(models.Model):
     name = models.CharField(max_length=200)
-    state = models.CharField(max_length=200)
-    age = models.IntegerField()
+    weight=models.IntegerField()
+    gender=models.CharField(max_length=100)
+    location=models.CharField(max_length=200)
+    categories=models.CharField(max_length=100)
     image = models.ImageField()
     list_date = models.DateTimeField(default=datetime.now, blank=True)
 
